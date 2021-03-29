@@ -1,6 +1,6 @@
 {% set name = "conda-content-trust" %}
-{% set version = "0.1.0" %}
-{% set sha256 = "e03f91f5b3ea0398bcc18f71883811167a193755058f6bbea323660d67c7a6df" %}
+{% set version = "0.1.1" %}
+{% set sha256 = "01e47b244b1b8fb259f021b15deb5c42c012c2793708518935c076757f0e72d0" %}
 
 package:
   name: {{ name }}
