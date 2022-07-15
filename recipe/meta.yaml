@@ -50,4 +50,4 @@ about:
   license_file: LICENSE
   summary: Signing and verification tools for conda
   dev_url: https://github.com/conda/conda-content-trust
-  doc_url: 
+  doc_url: https://github.com/conda/conda-content-trust/blob/main/README.rst
