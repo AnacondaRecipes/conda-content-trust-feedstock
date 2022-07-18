@@ -1,6 +1,6 @@
 {% set name = "conda-content-trust" %}
-{% set version = "0.1.1" %}
-{% set sha256 = "01e47b244b1b8fb259f021b15deb5c42c012c2793708518935c076757f0e72d0" %}
+{% set version = "0.1.3" %}
+{% set sha256 = "50a2732dcf3612bdff2b36171e3ebc72a74bbc258543a5aa2618218406b30a0d" %}
 
 package:
   name: {{ name }}
@@ -12,8 +12,8 @@ source:
   sha256: {{ sha256 }}
 
 build:
+  number: 0
   script: {{ PYTHON }} -m pip install --no-deps --ignore-installed -vv .
-  noarch: python
   entry_points:
     - conda-content-trust = conda_content_trust.cli:cli
 
@@ -21,24 +21,33 @@ requirements:
   host:
     - python
     - pip
+    - setuptools
+    - wheel
   run:
     - python
-    - six
     - cryptography
+    - six
 
 test:
   source_files:
     - tests
+  imports:
+    - conda_content_trust
   requires:
+    - pip
     - pytest
     - pytest-cov
     - ruamel_yaml
   commands:
+    - pip check
     - pytest -v tests
     - conda-content-trust --help
 
 about:
   home: https://github.com/conda/conda-content-trust
-  summary: Signing and verification tools for conda
   license: BSD-3-Clause
+  license_family: BSD
   license_file: LICENSE
+  summary: Signing and verification tools for conda
+  dev_url: https://github.com/conda/conda-content-trust
+  doc_url: https://github.com/conda/conda-content-trust/blob/main/README.rst
