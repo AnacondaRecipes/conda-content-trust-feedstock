@@ -37,7 +37,7 @@ test:
     - pip
     - pytest
     - pytest-cov
-    - ruamel_yaml
+    - cryptography >=41.0.0
   commands:
     - pip check
     - pytest -v tests
