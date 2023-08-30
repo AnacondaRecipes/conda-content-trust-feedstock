@@ -1,6 +1,6 @@
 {% set name = "conda-content-trust" %}
-{% set version = "0.1.3" %}
-{% set sha256 = "50a2732dcf3612bdff2b36171e3ebc72a74bbc258543a5aa2618218406b30a0d" %}
+{% set version = "0.2.0" %}
+{% set sha256 = "4a2da41a62cd6307090038fc89cdffcf4ea92cfea505cd192dfdaa9f04408195" %}
 
 package:
   name: {{ name }}
@@ -21,18 +21,18 @@ requirements:
   host:
     - python
     - pip
-    - setuptools
+    - hatchling >=1.12.2
+    - hatch-vcs >=0.2.0
     - wheel
   run:
     - python
-    - cryptography
-    - six
+    - cryptography >=41
 
 test:
-  source_files:
-    - tests
   imports:
     - conda_content_trust
+  source_files:
+    - tests
   requires:
     - pip
     - pytest
@@ -50,4 +50,4 @@ about:
   license_file: LICENSE
   summary: Signing and verification tools for conda
   dev_url: https://github.com/conda/conda-content-trust
-  doc_url: https://github.com/conda/conda-content-trust/blob/main/README.rst
+  doc_url: https://github.com/conda/conda-content-trust/blob/main/README.md
