@@ -20,12 +20,12 @@ build:
 
 requirements:
   host:
-    - python >=3.10
+    - python
     - pip
     - hatchling >=1.12.2
     - hatch-vcs >=0.2.0
   run:
-    - python >=3.10
+    - python
     - conda >=26.3.0
     - cryptography >=41
 
