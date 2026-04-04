@@ -1,6 +1,6 @@
 {% set name = "conda-content-trust" %}
-{% set version = "0.2.0" %}
-{% set sha256 = "ded769f69a0491bd1e002ce949a332ae5a47a60ce733adb8a724802c8fdfe02b" %}
+{% set version = "0.3.1" %}
+{% set sha256 = "29edab3cf40e63231ec52109ce1ae1036ba09450ff3923f24eb4d1c79c8a636c" %}
 
 package:
   name: {{ name }}
@@ -12,8 +12,8 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 1
-  skip: true  # [py<38]
+  number: 0
+  skip: true  # [py<310]
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   entry_points:
     - conda-content-trust = conda_content_trust.cli:cli
@@ -26,6 +26,7 @@ requirements:
     - hatch-vcs >=0.2.0
   run:
     - python
+    - conda >=26.3.0
     - cryptography >=41
 
 test:
